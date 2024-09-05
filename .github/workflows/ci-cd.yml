@@ -1,0 +1,25 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: dealday/gcc-arm:latest
+    steps:
+      - name: compiling code
+        run: |
+          echo "Compiling code"
+          ls
+      - name: Change to project folder
+        uses: actions/checkout@v4
+      - name: generating binary with makefile
+        run: |
+          cd Project/makefile/myProject
+          make clean
+          make all
+          echo "Compile done"
