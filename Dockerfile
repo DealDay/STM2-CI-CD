@@ -2,7 +2,17 @@ FROM ubuntu:latest
 # ENV REFRESHED_AT=2024-08-26
 # Download Linux support tools
 RUN apt-get update && apt-get clean && \
-    apt-get install -y build-essential wget curl git 
+    apt-get install -y build-essential wget curl git && \
+    apt-get install -y autoconf libtool
+
+# Install and configure CppUTest
+WORKDIR /home/cpputest
+RUN git clone --depth 1 --branch v4.0 https://github.com/cpputest/cpputest.git .
+RUN autoreconf . -i
+RUN ./configure
+RUN make install
+ENV CPPUTEST_HOME=/home/cpputest
+
 # Set up a development tools directory
 WORKDIR /home/dev
 ADD . /home/dev
