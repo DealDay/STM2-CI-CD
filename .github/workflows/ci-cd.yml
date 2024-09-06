@@ -33,5 +33,6 @@ jobs:
         uses: actions/checkout@v4
       - name: running test
         run: |
+          cd myProject
           make test
           echo "test done"
