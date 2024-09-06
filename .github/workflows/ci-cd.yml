@@ -29,7 +29,9 @@ jobs:
     container:
       image: dealday/gcc-arm:latest
     steps:
-      - name: Running test
+      - name: cd to working directory
+        uses: actions/checkout@v4
+      - name: running test
         run: |
           make test
           echo "test done"
