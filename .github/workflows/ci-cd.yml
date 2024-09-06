@@ -23,6 +23,12 @@ jobs:
           make clean
           make all
           echo "Compile done"
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    container:
+      image: dealday/gcc-arm:latest
+    steps:
       - name: Running test
         run: |
           make test
