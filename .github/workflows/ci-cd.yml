@@ -22,5 +22,8 @@ jobs:
           cd myProject
           make clean
           make all
-          make test
           echo "Compile done"
+      - name: generating binary with makefile
+        run: |
+          make test
+          echo "test done"
