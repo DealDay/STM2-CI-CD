@@ -22,4 +22,5 @@ jobs:
           cd myProject
           make clean
           make all
+          make test
           echo "Compile done"

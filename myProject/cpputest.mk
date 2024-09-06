@@ -2,7 +2,7 @@
 SILENCE = @
 
 #---- Outputs ----#
-COMPONENT_NAME = Test/main
+COMPONENT_NAME = Tests/main
 
 #--- Inputs ----#
 PROJECT_HOME_DIR = /home/app
@@ -26,9 +26,9 @@ endif
 # production code C and CPP files.
 #
 SRC_FILES := $(shell find Firmware/Application -type f -name '*.c')
-SRC_DIRS += Firmware
-HEADERS := $(shell find $(SRC_DIR) -type f -name '*.h')
-HEADER_FOLDERS := $(shell dirname $(HEADERS) | sort --unique)
+# SRC_DIRS += Firmware
+# HEADERS := $(shell find $(SRC_DIR) -type f -name '*.h')
+# HEADER_FOLDERS := $(shell dirname $(HEADERS) | sort --unique)
 
 # --- TEST_SRC_FILES and TEST_SRC_DIRS ---
 # Test files are always included in the build.

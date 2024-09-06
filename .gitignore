@@ -45,3 +45,5 @@ Debug
 build
 unit-tests
 .vscode
+test-lib
+test-obj

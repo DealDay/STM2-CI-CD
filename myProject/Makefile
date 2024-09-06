@@ -208,11 +208,13 @@ clean:
 -include $(wildcard $(BUILD_DIR)/*.d)
 
 # Specifying headers folder
-SRC_DIR := Firmware
-HEADERS := $(shell find $(SRC_DIR) -type f -name '*.h')
-HEADER_FOLDERS := $(shell dirname $(HEADERS) | sort --unique)
+# SRC_DIR := Firmware
+# HEADERS := $(shell find $(SRC_DIR) -type f -name '*.h')
+# HEADER_FOLDERS := $(shell dirname $(HEADERS) | sort --unique)
 
 # # Run CppUTest unit tests
-tests: $(DIST_DIR) $(MAKE) -j CC=gcc -f cpputest.mk gcov
+test: 	$(DIST_DIR) 
+		$(MAKE) -j CC=gcc -f cpputest.mk gcov
+# tests: $(MAKE) -j CC=gcc -f cpputest.mk gcov
 
 # *** EOF ***
