@@ -23,7 +23,7 @@ jobs:
           make clean
           make all
           echo "Compile done"
-      - name: generating binary with makefile
+      - name: Running test
         run: |
           make test
           echo "test done"
