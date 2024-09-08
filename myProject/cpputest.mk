@@ -25,9 +25,9 @@ endif
 # SRC_DIRS specifies directories containing
 # production code C and CPP files.
 #
-SRC_FILES := $(shell find Firmware/Application -type f -name '*.c')
+SRC_FILES := $(shell find Firmware/Application -type f -name '*.cpp')
 SRC_DIRS += Firmware
-HEADERS := $(shell find $(SRC_DIR) -type f -name '*.h')
+HEADERS := $(shell find $(SRC_DIR) -type f -name '*.hpp')
 HEADER_FOLDERS := $(shell dirname $(HEADERS) | sort --unique)
 
 # --- TEST_SRC_FILES and TEST_SRC_DIRS ---
