@@ -225,7 +225,7 @@ clean_test:
 # # Run CppUTest unit tests
 test: 	
 	$(DIST_DIR) 
-	$(MAKE) -j CC=gcc -f cpputest.mk gcov
+	$(MAKE) -j CC=gcc -f cpputest.mk
 # tests: $(MAKE) -j CC=gcc -f cpputest.mk gcov
 
 # *** EOF ***
