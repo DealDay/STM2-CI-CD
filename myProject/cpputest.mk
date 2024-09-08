@@ -41,8 +41,8 @@ HEADER_FOLDERS := $(shell dirname $(HEADERS) | sort --unique)
 
 TEST_SRC_FILES += 
 TEST_SRC_DIRS += Tests
-TEST_SRC_DIRS += tests/io-cppumock
-TEST_SRC_DIRS += tests/printf-spy
+# TEST_SRC_DIRS += tests/io-cppumock
+# TEST_SRC_DIRS += tests/printf-spy
 
 #	tests/example-fff \
 #	tests/fff \

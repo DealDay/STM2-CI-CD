@@ -34,5 +34,6 @@ jobs:
       - name: running test
         run: |
           cd myProject
+          make clean_test
           make test
           echo "test done"
