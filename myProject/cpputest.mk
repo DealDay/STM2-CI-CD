@@ -26,9 +26,9 @@ endif
 # production code C and CPP files.
 #
 SRC_FILES := $(shell find Firmware/Application -type f -name '*.c')
-# SRC_DIRS += Firmware
-# HEADERS := $(shell find $(SRC_DIR) -type f -name '*.h')
-# HEADER_FOLDERS := $(shell dirname $(HEADERS) | sort --unique)
+SRC_DIRS += Firmware
+HEADERS := $(shell find $(SRC_DIR) -type f -name '*.h')
+HEADER_FOLDERS := $(shell dirname $(HEADERS) | sort --unique)
 
 # --- TEST_SRC_FILES and TEST_SRC_DIRS ---
 # Test files are always included in the build.
@@ -62,7 +62,7 @@ CPPUTEST_USE_EXTENSIONS = Y
 
 # INCLUDE_DIRS are searched in order after the included file's
 # containing directory
-INCLUDE_DIRS += $(HEADER_FOLDERS)
+INCLUDE_DIRS += $(SRC_DIR)
 INCLUDE_DIRS += $(CPPUTEST_HOME)/include
 INCLUDE_DIRS += $(CPPUTEST_HOME)/include/Platforms/Gcc
 

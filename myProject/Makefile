@@ -201,6 +201,16 @@ $(BUILD_DIR):
 #######################################
 clean:
 	-rm -fR $(BUILD_DIR)
+
+#######################################
+# clean up test obj
+#######################################
+CPPUTEST_OBJS_DIR = test-obj
+
+CPPUTEST_LIB_DIR = test-lib
+clean_test:
+	-rm -fR $(CPPUTEST_OBJS_DIR)
+	-rm -fR $(CPPUTEST_LIB_DIR)
   
 #######################################
 # dependencies
@@ -213,8 +223,9 @@ clean:
 # HEADER_FOLDERS := $(shell dirname $(HEADERS) | sort --unique)
 
 # # Run CppUTest unit tests
-test: 	$(DIST_DIR) 
-		$(MAKE) -j CC=gcc -f cpputest.mk gcov
+test: 	
+	$(DIST_DIR) 
+	$(MAKE) -j CC=gcc -f cpputest.mk gcov
 # tests: $(MAKE) -j CC=gcc -f cpputest.mk gcov
 
 # *** EOF ***
