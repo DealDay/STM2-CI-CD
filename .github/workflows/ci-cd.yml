@@ -14,7 +14,6 @@ jobs:
       - name: compiling code
         run: |
           echo "Compiling code"
-          ls
       - name: Change to project folder
         uses: actions/checkout@v4
       - name: generating binary with makefile
