@@ -8,4 +8,4 @@ This project shows how to utilise CI/CD pipeline to compile and test embedded so
     - For Windows: start here https://docs.docker.com/desktop/windows/install/
     - For Linux: search for instructions for your system.
 - clone repository
-##<tab><tab>git clone https://github.com/DealDay/STM2-CI-CD.git
+<tab><tab>git clone https://github.com/DealDay/STM2-CI-CD.git
