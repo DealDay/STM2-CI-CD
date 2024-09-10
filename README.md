@@ -7,6 +7,12 @@ This project shows how to utilise CI/CD pipeline to compile and test embedded so
     - For Mac: start here https://docs.docker.com/desktop/mac/install/
     - For Windows: start here https://docs.docker.com/desktop/windows/install/
     - For Linux: search for instructions for your system.
-- clone repository
-######
+### Clone repository
+cd <to-desired-directory>
         git clone https://github.com/DealDay/STM2-CI-CD.git
+### Pull dealday/gcc-arm:latest from docker hub
+        docker pull dealday/gcc-arm:latest
+### Run docker image
+cd <repository-location>
+        docker run --rm -it --privileged -v "$(PWD):/home/app" adeola/gcc-arm:latest bash
+
