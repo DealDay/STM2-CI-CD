@@ -8,7 +8,7 @@ This project shows how to utilise CI/CD pipeline to compile and test embedded so
     - For Windows: start here https://docs.docker.com/desktop/windows/install/
     - For Linux: search for instructions for your system.
 ### Clone repository
-cd '<to-desired-directory>'
+cd \<to-desired-directory>
 ######
         git clone https://github.com/DealDay/STM2-CI-CD.git
 ### Pull dealday/gcc-arm:latest from docker hub
