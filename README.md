@@ -16,5 +16,16 @@ cd \<to-desired-directory>
 ### Run docker image
 cd \<repository-location>
 ######
-        docker run --rm -it --privileged -v "$(PWD):/home/app" adeola/gcc-arm:latest bash
+        docker run --rm -it --privileged -v "$(PWD):/home/app" dealday/gcc-arm:latest bash
+### Change to project directory
+######
+        cd myProject
+### Build project
+######
+        make all
+### Delete build directory
+######
+        make clean
+### Run test
+        make test
 
