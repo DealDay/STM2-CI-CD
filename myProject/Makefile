@@ -30,6 +30,8 @@ OPT = -Og
 #######################################
 # Build path
 BUILD_DIR = build
+# Config path
+CONF_DIR := Config
 
 ######################################
 # source
@@ -226,6 +228,9 @@ clean_test:
 test: 	
 	$(DIST_DIR) 
 	$(MAKE) -j CC=gcc -f cpputest.mk
-# tests: $(MAKE) -j CC=gcc -f cpputest.mk gcov
+
+## Program the board with JLinkExe
+deployToTarget: binaries
+	JLinkExe -NoGui 1 -CommandFile $(CONF_DIR)/program.jlink
 
 # *** EOF ***
