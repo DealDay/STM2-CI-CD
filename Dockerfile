@@ -5,6 +5,17 @@ RUN apt-get update && apt-get clean && \
     apt-get install -y build-essential wget curl git && \
     apt-get install -y autoconf libtool
 
+# Download and install JLink tools
+RUN wget --post-data 'accept_license_agreement=accepted' https://www.segger.com/downloads/jlink/JLink_Linux_V798h_x86_64.deb \
+    && DEBIAN_FRONTEND=noninteractive TZ=America/Los_Angeles \
+    && apt-get install -y libxcb-render-util0-dev libxrender1 libxcb-shape0 libxcb-randr0 libxcb-xfixes0 libxcb-sync1 \
+    libxcb-shm0 libxcb-icccm4 libxcb-keysyms1 libxcb-image0 libxkbcommon0 libxkbcommon-x11-0 libx11-xcb1 libsm6 \
+    libice6 libglib2.0-0 \
+    && echo '#!/bin/bash\necho not running udevadm "$@"' > /usr/bin/udevadm && chmod +x /usr/bin/udevadm \
+    && dpkg -i ./JLink_Linux_V798h_x86_64.deb \
+    && rm JLink_Linux_V798h_x86_64.deb
+ENV PATH=$PATH:/opt/SEGGER/JLink
+
 # Install and configure CppUTest
 WORKDIR /home/cpputest
 RUN git clone --depth 1 --branch v4.0 https://github.com/cpputest/cpputest.git .

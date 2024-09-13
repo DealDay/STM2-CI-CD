@@ -1,5 +1,5 @@
 # STM2-CI-CD
-This project shows how to utilise CI/CD pipeline to compile and test embedded software for an STM32 microcontroller. 
+This project shows how to utilise CI/CD pipeline to compile, test and deploy embedded software for an STM32 microcontroller. 
 ## Usage
 ### Prerequisite
 1. [git installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
@@ -26,4 +26,6 @@ cd \<repository-location>
         make test
 ### Delete test folders
         make clean_test
+## Features and functionality
+    - 
 
