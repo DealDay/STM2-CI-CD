@@ -6,8 +6,6 @@ on:
     paths-ignore:
       - '.github/workflows/**.yml'
       - 'Makefile'
-  # pull_request:
-  #   branches: [ "main" ]
 jobs:
   build:
     needs: test
