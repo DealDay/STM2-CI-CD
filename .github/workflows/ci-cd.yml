@@ -47,7 +47,7 @@ jobs:
     steps:
       - name: cd to working directory
         uses: actions/checkout@v4
-      - name: running test
+      - name: deploying to target
         run: |
           cd myProject
           make deployToTarget

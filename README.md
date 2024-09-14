@@ -28,5 +28,6 @@ For more information on how to use the unit test please visit https://github.com
 ### Delete test folders
         make clean_test
 ### Deploy to target
+The target must be connected to the computer
         make deployToTarget
 You can delete files in Firmware/Application and add your customised code there
