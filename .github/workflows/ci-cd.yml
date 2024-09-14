@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
     paths-ignore:
-      - '.githum/workflows/**.yml'
+      - '.github/workflows/**.yml'
       - 'Makefile'
   # pull_request:
   #   branches: [ "main" ]
