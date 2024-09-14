@@ -1,5 +1,5 @@
 # STM2-CI-CD
-This project shows how to utilise CI/CD pipeline to compile, test and deploy embedded software for an STM32 microcontroller. 
+This project shows how to utilise CI/CD pipeline to compile, test and deploy embedded software for an ST microcontroller. STM32L475VGT6 was used for this project. This project can be used, with little edit, to flash any STM32L475VGTx. For more information on the project setup/pipeline please read Appendix C & D of Embedded Software Design a Practical Architecture Processes and Coding by Jacob Beningo
 ## Usage
 ### Prerequisite
 1. [git installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
@@ -24,8 +24,9 @@ cd \<repository-location>
         make clean
 ### Run test
         make test
+For more information on how to use the unit test please visit https://github.com/jwgrenning/cpputest-starter-project
 ### Delete test folders
         make clean_test
-## Features and functionality
-    - 
-
+### Deploy to target
+        make deployToTarget
+You can delete files in Firmware/Application and add your customised code there

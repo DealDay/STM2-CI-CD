@@ -4,11 +4,13 @@ on:
   push:
     branches: [ "main" ]
     paths-ignore:
-      '.githum/workflows/**.yml'
+      - '.githum/workflows/**.yml'
+      - 'Makefile'
   # pull_request:
   #   branches: [ "main" ]
 jobs:
   build:
+    needs: test
     runs-on: ubuntu-latest
     container:
       image: dealday/gcc-arm:latest
@@ -25,7 +27,6 @@ jobs:
           make all
           echo "Compile done"
   test:
-    needs: build
     runs-on: ubuntu-latest
     container:
       image: dealday/gcc-arm:latest
@@ -38,3 +39,16 @@ jobs:
           make clean_test
           make test
           echo "test done"
+  deployToTarget:
+    needs: build
+    runs-on: ubuntu-latest
+    container:
+      image: dealday/gcc-arm:latest
+    steps:
+      - name: cd to working directory
+        uses: actions/checkout@v4
+      - name: running test
+        run: |
+          cd myProject
+          make deployToTarget
+          echo "Succesfully deployed to Target"

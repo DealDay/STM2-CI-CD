@@ -1,8 +1,8 @@
-device STM32L475RE
+device STM32L475VGT6
 si 1
 speed 4000
 erase
-loadfile Firmware/Project/build/Blinky.hex
+loadfile myProject/build/myProject.hex
 r
 g
 exit
